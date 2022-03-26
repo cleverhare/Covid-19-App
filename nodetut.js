@@ -1,0 +1,49 @@
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3002;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/HTML');
+  res.end(`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+      <title>Covid-19 Api in JavaScript</title>
+  </head>
+  <body>
+      <div class="container">
+          <h1 class="text-center mt-5 red">Covid-19 Updates Of India</h1>
+          <br><br>
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Today Total Cases</th>
+                  <th>Today Total Deaths</th>
+                  <th>Total confirmed</th>
+                </tr>
+              </thead>
+              <tbody>
+               <tr id="data">
+                   
+               </tr>
+              </tbody>
+            </table>
+            <br>
+            <button class="btn btn-danger btn-block">Refresh Data</button>
+          </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+     
+  </body>
+  </html>`);
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
