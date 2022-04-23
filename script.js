@@ -3,12 +3,12 @@ function init(params) {
     var url = "https://api.covid19api.com/summary"
     var data = ``
     $.get(url, function (data) {
-        console.log(data.Countries[76])
+        console.log(data.Countries[77])
 
         data = `
-        <td>${data.Countries[76].NewConfirmed} </td>
-        <td>${data.Countries[76].NewDeaths} </td>
-        <td>${data.Countries[76].TotalConfirmed} </td>
+        <td>${data.Countries[77].NewConfirmed} </td>
+        <td>${data.Countries[77].NewDeaths} </td>
+        <td>${data.Countries[77].TotalConfirmed} </td>
         `
         $("#data").html(data)
     }) 
